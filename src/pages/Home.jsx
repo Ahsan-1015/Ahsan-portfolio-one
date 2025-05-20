@@ -1,12 +1,12 @@
-import Hero from '../components/Hero';
-import About from './About';
-import Contact from './Contact';
-import Projects from './Projects';
-import Skills from './Skills';
+import Hero from "../components/Hero";
+import About from "./About";
+import Contact from "./Contact";
+import Projects from "./Projects";
+import Skills from "./Skills";
 
 const Home = () => {
   return (
-    <div>
+    <div className="border border-gray-600 rounded-xl  ">
       <Hero />
       <About />
       <Skills />

@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "title": "Blood Donation App",
+    "description": "A full-stack MERN application for managing blood donors and requests.A full-stack MERN application for managing blood donors and requests.A full-stack MERN application for managing blood donors and requests.Firebase-auth based React app for organizing clothing donations.",
+    "type": "Full Stack",
+    "status": "Completed",
+    "start": "2024-12-01",
+    "end": "2025-01-30",
+    "technology": ["#React", "#Node.js", "#Express", "#MongoDB", "#Tailwind"],
+    "image": "https://specials-images.forbesimg.com/imageserve/687569183e749e92f5f2cdfe/best-flower-delivery-services-2025/960x0.jpg?fit=scale",
+    "liveDemo": "https://blood-donation-47e0d.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/blood-donation-client",
+    "serverRepo": "https://github.com/Ahsan-36/blood-donation-server",
+    "challengesFaced": [
+      "Implementing secure authentication and role-based access control.",
+      "Optimizing large database queries for donor search.",
+      "Managing real-time updates for donation requests.",
+      "Integrating Stripe payment gateway without errors."
+    ],
+    "whatsNext": [
+      "Add a notification system for new donation requests.",
+      "Introduce a blood availability map for donors.",
+      "Implement multilingual support for accessibility.",
+      "Create an offline mode for low-connectivity areas."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Winter Clothes Donation",
+    "description": "Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.",
+    "type": "Frontend",
+    "status": "Ongoing",
+    "start": "2025-01-10",
+    "end": "",
+    "technology": ["#React", "#Firebase", "#Tailwind"],
+    "image": "https://img.freepik.com/premium-photo/watercolor-seamless-floral-frame-with-roses-leaves-background_1233999-3305.jpg?semt=ais_hybrid&w=740&q=80",
+    "liveDemo": "https://assignmnet-09-2713d.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/winter-donation",
+    "challengesFaced": [
+      "Ensuring authentication works seamlessly with Firebase.",
+      "Managing data validation for donor and recipient details.",
+      "Designing a user-friendly responsive UI.",
+      "Handling Firebase security rules for data protection."
+    ],
+    "whatsNext": [
+      "Add real-time chat between donors and recipients.",
+      "Include location-based donation matching.",
+      "Implement donation history tracking for users.",
+      "Enable bulk donation requests for organizations."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Winter Clothes Donation",
+    "description": "Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.",
+    "type": "Frontend",
+    "status": "Ongoing",
+    "start": "2025-01-10",
+    "end": "",
+    "technology": ["#React", "#Firebase", "#Tailwind"],
+    "image": "https://i.ibb.co.com/sdXZ1wfv/Screenshot-2025-07-20-154113.png",
+    "liveDemo": "https://assignmnet-09-2713d.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/winter-donation",
+    "challengesFaced": [
+      "Ensuring authentication works seamlessly with Firebase.",
+      "Managing data validation for donor and recipient details.",
+      "Designing a user-friendly responsive UI.",
+      "Handling Firebase security rules for data protection."
+    ],
+    "whatsNext": [
+      "Add real-time chat between donors and recipients.",
+      "Include location-based donation matching.",
+      "Implement donation history tracking for users.",
+      "Enable bulk donation requests for organizations."
+    ]
+  }
+]

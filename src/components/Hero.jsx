@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function Hero() {
   return (
-    <section className="min-h-screen text-white bg-[#0d1117]">
+    <section className="min-h-screen text-white bg-[#0d1117] ">
       <main className="w-full p-6 mt-3 ">
         <div className="text-center lg:text-left">
           <h2 className="text-3xl font-bold mb-2">Hi 👋, I'm Ahsan Habib</h2>
@@ -11,7 +11,7 @@ function Hero() {
             My Aim FULL-STACK developer from Bangladesh
           </p>
           <img
-            src="https://media.gettyimages.com/id/2156554760/photo/aveiro-portugal-cristiano-ronaldo-of-portugal-celebrates-scoring-portugal-second-goal-during.jpg?s=612x612&w=0&k=20&c=wnGzU0GJkvnmxRwu4DyXLmKMFyd9Rw71LSi8N6sm7_0="
+            src="https://camo.githubusercontent.com/85add4a9633786947f86fe4e86eb5aca6b190ff47345434755a0d98f488fefa7/68747470733a2f2f646576656c6f706572732e67697068792e636f6d2f6272616e63682f6d61737465722f7374617469632f6170692d35313264333663303936363236383237313731303861333862626235633537642e676966"
             alt="Hero Visual"
             className="mx-auto lg:mx-0 w-full max-w-2xl mb-6 rounded"
           />

@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import Main from "../layouts/Main";
 import Home from "../pages/Home";
+import ProjectDetails from "../pages/ProjectDetails";
 import Projects from "../pages/Projects";
 import Repositories from "../pages/Repositories";
 
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "about",
+        path: "projects",
         element: (
           <>
             <Helmet>
@@ -55,6 +56,17 @@ const router = createBrowserRouter([
               <title>Stars || Portfolio</title>
             </Helmet>
             {/* <Stars /> */}
+          </>
+        ),
+      },
+      {
+        path: "projects/:id",
+        element: (
+          <>
+            <Helmet>
+              <title>Project Details || Portfolio</title>
+            </Helmet>
+            <ProjectDetails />
           </>
         ),
       },

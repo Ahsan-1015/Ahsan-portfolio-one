@@ -2,8 +2,10 @@ import { ArrowUpRight } from "lucide-react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ProjectCard = ({
+  id,
   title,
   description,
   technology,
@@ -139,14 +141,12 @@ const ProjectCard = ({
               onMouseEnter={() => setHovered("details")}
               onMouseLeave={() => setHovered(null)}
             >
-              <a
-                href={liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={`/projects/${id}`}
                 className="px-4 py-1 rounded-full text-xs 2xl:text-base border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-gray-900 transition"
               >
                 View Details
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -156,6 +156,7 @@ const ProjectCard = ({
 };
 
 ProjectCard.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   technology: PropTypes.arrayOf(PropTypes.string),

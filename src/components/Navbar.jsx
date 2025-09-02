@@ -57,7 +57,7 @@ function Navbar() {
             )}
           </NavLink>
 
-          <NavLink to="/about" className={linkClass}>
+          <NavLink to="/projects" className={linkClass}>
             Projects
           </NavLink>
           <NavLink to="/contact" className={linkClass}>

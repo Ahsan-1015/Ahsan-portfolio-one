@@ -1,9 +1,9 @@
-function About() {
+function projects() {
   return (
-    <section id="about" className="p-12 bg-gray-100 text-center">
-      <h2 className="text-3xl font-bold mb-6">About Me</h2>
+    <section id="projects" className="p-12 bg-gray-100 text-center">
+      <h2 className="text-3xl font-bold mb-6">projects Me</h2>
       <p className="text-lg mb-4">
-        I am passionate about building beautiful and functional web
+        I am passionate projects building beautiful and functional web
         applications. I love learning new technologies and solving challenging
         problems.
       </p>
@@ -15,4 +15,4 @@ function About() {
   );
 }
 
-export default About;
+export default projects;

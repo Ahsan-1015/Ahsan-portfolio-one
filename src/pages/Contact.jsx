@@ -344,12 +344,284 @@ Sent from your portfolio website
               creative ideas to life. Let&apos;s discuss your next big idea!
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <button className="flex-1 py-3 px-6 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+              <button
+                onClick={() => {
+                  // Show scheduling options
+                  const schedulingOptions = [
+                    {
+                      name: "Email Request",
+                      action: () => {
+                        const subject = "Schedule a Call - Portfolio Inquiry";
+                        const body = `Hi there,\n\nI'd like to schedule a call to discuss my project requirements.\n\nBest regards,\n[Your Name]`;
+                        const mailtoLink = `mailto:${
+                          contactConfig.email
+                        }?subject=${encodeURIComponent(
+                          subject
+                        )}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mailtoLink;
+                      },
+                    },
+                    {
+                      name: "Calendly Booking",
+                      action: () => {
+                        if (contactConfig.scheduling?.calendly) {
+                          window.open(
+                            contactConfig.scheduling.calendly,
+                            "_blank",
+                            "noopener,noreferrer"
+                          );
+                        } else {
+                          alert(
+                            "Calendly link not configured. Please contact via email."
+                          );
+                        }
+                      },
+                    },
+                    {
+                      name: "Zoom Meeting",
+                      action: () => {
+                        if (contactConfig.scheduling?.zoomMeeting) {
+                          window.open(
+                            contactConfig.scheduling.zoomMeeting,
+                            "_blank",
+                            "noopener,noreferrer"
+                          );
+                        } else {
+                          alert(
+                            "Zoom meeting link not configured. Please contact via email."
+                          );
+                        }
+                      },
+                    },
+                  ];
+
+                  // Create and show a simple modal for scheduling options
+                  const modal = document.createElement("div");
+                  modal.className =
+                    "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
+
+                  const modalContent = document.createElement("div");
+                  modalContent.className =
+                    "bg-[#0b0f14] border border-purple-500/30 rounded-xl p-6 max-w-md w-full mx-4";
+
+                  const title = document.createElement("h3");
+                  title.className = "text-xl font-bold text-blue-400 mb-4";
+                  title.textContent = "Choose Scheduling Method";
+                  modalContent.appendChild(title);
+
+                  const optionsContainer = document.createElement("div");
+                  optionsContainer.className = "space-y-3";
+
+                  schedulingOptions.forEach((option) => {
+                    const button = document.createElement("button");
+                    button.className =
+                      "w-full py-3 px-4 bg-gray-800 hover:bg-gray-700 border border-gray-600 text-white rounded-lg transition-colors text-left";
+                    button.textContent = option.name;
+                    button.onclick = () => {
+                      document.body.removeChild(modal);
+                      option.action();
+                    };
+                    optionsContainer.appendChild(button);
+                  });
+
+                  modalContent.appendChild(optionsContainer);
+
+                  const cancelButton = document.createElement("button");
+                  cancelButton.className =
+                    "w-full mt-4 py-2 px-4 bg-gray-600 hover:bg-gray-500 text-white rounded-lg transition-colors";
+                  cancelButton.textContent = "Cancel";
+                  cancelButton.onclick = () => {
+                    document.body.removeChild(modal);
+                  };
+                  modalContent.appendChild(cancelButton);
+
+                  modal.appendChild(modalContent);
+                  document.body.appendChild(modal);
+                }}
+                className="flex-1 py-3 px-6 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
                 Schedule a Call
               </button>
-              <button className="flex-1 py-3 px-6 bg-gray-800 hover:bg-gray-700 border border-gray-600 text-white font-semibold rounded-lg transition-all duration-300">
+              <button
+                onClick={() => {
+                  // Show calendar options
+                  const calendarOptions = [
+                    {
+                      name: "Google Calendar",
+                      action: () => {
+                        if (contactConfig.scheduling?.googleCalendar) {
+                          window.open(
+                            contactConfig.scheduling.googleCalendar,
+                            "_blank",
+                            "noopener,noreferrer"
+                          );
+                        } else {
+                          alert(
+                            "Google Calendar not configured. Please contact via email."
+                          );
+                        }
+                      },
+                    },
+                    {
+                      name: "Calendly",
+                      action: () => {
+                        if (contactConfig.scheduling?.calendly) {
+                          window.open(
+                            contactConfig.scheduling.calendly,
+                            "_blank",
+                            "noopener,noreferrer"
+                          );
+                        } else {
+                          alert(
+                            "Calendly not configured. Please contact via email."
+                          );
+                        }
+                      },
+                    },
+                    {
+                      name: "Email Request",
+                      action: () => {
+                        const subject = "Calendar Availability Request";
+                        const body = `Hi there,\n\nI'd like to check your calendar availability for a meeting.\n\nBest regards,\n[Your Name]`;
+                        const mailtoLink = `mailto:${
+                          contactConfig.email
+                        }?subject=${encodeURIComponent(
+                          subject
+                        )}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mailtoLink;
+                      },
+                    },
+                  ];
+
+                  // Create and show a simple modal for calendar options
+                  const modal = document.createElement("div");
+                  modal.className =
+                    "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
+
+                  const modalContent = document.createElement("div");
+                  modalContent.className =
+                    "bg-[#0b0f14] border border-purple-500/30 rounded-xl p-6 max-w-md w-full mx-4";
+
+                  const title = document.createElement("h3");
+                  title.className = "text-xl font-bold text-blue-400 mb-4";
+                  title.textContent = "Choose Calendar Method";
+                  modalContent.appendChild(title);
+
+                  const optionsContainer = document.createElement("div");
+                  optionsContainer.className = "space-y-3";
+
+                  calendarOptions.forEach((option) => {
+                    const button = document.createElement("button");
+                    button.className =
+                      "w-full py-3 px-4 bg-gray-800 hover:bg-gray-700 border border-gray-600 text-white rounded-lg transition-colors text-left";
+                    button.textContent = option.name;
+                    button.onclick = () => {
+                      document.body.removeChild(modal);
+                      option.action();
+                    };
+                    optionsContainer.appendChild(button);
+                  });
+
+                  modalContent.appendChild(optionsContainer);
+
+                  const cancelButton = document.createElement("button");
+                  cancelButton.className =
+                    "w-full mt-4 py-2 px-4 bg-gray-600 hover:bg-gray-500 text-white rounded-lg transition-colors";
+                  cancelButton.textContent = "Cancel";
+                  cancelButton.onclick = () => {
+                    document.body.removeChild(modal);
+                  };
+                  modalContent.appendChild(cancelButton);
+
+                  modal.appendChild(modalContent);
+                  document.body.appendChild(modal);
+                }}
+                className="flex-1 py-3 px-6 bg-gray-800 hover:bg-gray-700 border border-gray-600 text-white font-semibold rounded-lg transition-all duration-300"
+              >
                 View Calendar
               </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Availability Information */}
+        <div className="bg-[#0b0f14] border border-purple-500/30 rounded-xl p-6 shadow-[0_0_30px_rgba(168,85,247,0.1)]">
+          <h3 className="text-2xl font-bold text-blue-400 mb-4">
+            Availability
+          </h3>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3 p-3 bg-gray-800/50 rounded-lg">
+              <div className="p-2 bg-purple-600/20 rounded-lg">
+                <svg
+                  className="w-5 h-5 text-purple-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Business Hours</p>
+                <p className="text-white font-medium">
+                  {contactConfig.availability?.businessHours ||
+                    "Mon-Fri: 9:00 AM - 6:00 PM"}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-3 p-3 bg-gray-800/50 rounded-lg">
+              <div className="p-2 bg-blue-600/20 rounded-lg">
+                <svg
+                  className="w-5 h-5 text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Timezone</p>
+                <p className="text-white font-medium">
+                  {contactConfig.availability?.timezone || "EST"}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-3 p-3 bg-gray-800/50 rounded-lg">
+              <div className="p-2 bg-green-600/20 rounded-lg">
+                <svg
+                  className="w-5 h-5 text-green-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm">Response Time</p>
+                <p className="text-white font-medium">
+                  {contactConfig.availability?.responseTime ||
+                    "Within 24 hours"}
+                </p>
+              </div>
             </div>
           </div>
         </div>

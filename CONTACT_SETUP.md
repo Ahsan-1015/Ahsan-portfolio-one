@@ -18,6 +18,21 @@ export const contactConfig = {
     github: "https://github.com/your-actual-username",
     twitter: "https://twitter.com/your-actual-username",
   },
+
+  // Calendar and Scheduling - Update these with your actual booking links
+  scheduling: {
+    calendly: "https://calendly.com/yourusername/portfolio-consultation", // Your Calendly link
+    googleCalendar:
+      "https://calendar.google.com/calendar/embed?src=your-email%40gmail.com", // Your Google Calendar
+    zoomMeeting: "https://zoom.us/j/your-meeting-id", // Your Zoom meeting link
+  },
+
+  // Business Hours and Availability
+  availability: {
+    timezone: "Your Timezone", // e.g., "EST", "PST", "BST"
+    businessHours: "Mon-Fri: 9:00 AM - 6:00 PM", // Your business hours
+    responseTime: "Within 24 hours", // Your response time commitment
+  },
 };
 ```
 
@@ -37,7 +52,10 @@ export const contactConfig = {
 ✅ **Form Validation**: Client-side validation with visual feedback  
 ✅ **Success/Error States**: Clear feedback for users  
 ✅ **Social Links**: LinkedIn, GitHub, Twitter integration  
-✅ **Responsive Layout**: Mobile-first design
+✅ **Responsive Layout**: Mobile-first design  
+✅ **Smart Scheduling**: Multiple scheduling options with modal selection  
+✅ **Calendar Integration**: Google Calendar, Calendly, and Zoom support  
+✅ **Availability Display**: Business hours, timezone, and response time
 
 ### 4. Customization Options
 
@@ -62,7 +80,29 @@ For production use, consider integrating with:
 - Netlify Forms
 - Custom backend API
 
-### 6. File Structure
+### 6. Scheduling & Calendar Features
+
+#### **Schedule a Call Button:**
+
+- **Email Request**: Opens email client with pre-filled scheduling request
+- **Calendly Booking**: Direct link to your Calendly booking page
+- **Zoom Meeting**: Direct link to Zoom meeting room
+- **Smart Modal**: User-friendly selection interface
+
+#### **View Calendar Button:**
+
+- **Google Calendar**: View your public calendar
+- **Calendly**: Direct booking through Calendly
+- **Email Request**: Request calendar availability via email
+- **Multiple Options**: Users can choose their preferred method
+
+#### **Availability Display:**
+
+- **Business Hours**: Shows your working schedule
+- **Timezone**: Displays your local timezone
+- **Response Time**: Sets expectations for communication
+
+### 7. File Structure
 
 ```
 src/
@@ -74,7 +114,7 @@ src/
     └── router.jsx           # Contact route (/contact)
 ```
 
-### 7. Available Routes
+### 8. Available Routes
 
 - **Home**: `/` - Overview with contact section
 - **Contact**: `/contact` - Full contact page

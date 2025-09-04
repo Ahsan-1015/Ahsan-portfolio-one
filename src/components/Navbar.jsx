@@ -61,7 +61,7 @@ function Navbar() {
             Projects
           </NavLink>
           <NavLink to="/contact" className={linkClass}>
-            Stars
+            Contact
           </NavLink>
         </div>
       </div>

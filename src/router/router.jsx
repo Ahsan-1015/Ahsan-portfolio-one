@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { createBrowserRouter } from "react-router-dom";
 
 import Main from "../layouts/Main";
+import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import ProjectDetails from "../pages/ProjectDetails";
 import Projects from "../pages/Projects";
@@ -53,9 +54,9 @@ const router = createBrowserRouter([
         element: (
           <>
             <Helmet>
-              <title>Stars || Portfolio</title>
+              <title>Contact || Portfolio</title>
             </Helmet>
-            {/* <Stars /> */}
+            <Contact />
           </>
         ),
       },

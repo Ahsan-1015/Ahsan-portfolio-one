@@ -9,7 +9,7 @@ const Home = () => {
       <Hero />
       <projects />
       <Skills />
-      <Projects />
+      <Projects showViewAll={true} />
       <Contact />
     </div>
   );

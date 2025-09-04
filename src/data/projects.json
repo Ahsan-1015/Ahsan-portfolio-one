@@ -10,8 +10,8 @@
     "technology": ["#React", "#Node.js", "#Express", "#MongoDB", "#Tailwind"],
     "image": "https://specials-images.forbesimg.com/imageserve/687569183e749e92f5f2cdfe/best-flower-delivery-services-2025/960x0.jpg?fit=scale",
     "liveDemo": "https://blood-donation-47e0d.web.app/",
-    "clientRepo": "https://github.com/Ahsan-36/blood-donation-client",
-    "serverRepo": "https://github.com/Ahsan-36/blood-donation-server",
+    "clientRepo": "https://github.com/Ahsan-1015/UnityBlood-Client",
+    "serverRepo": "https://github.com/Ahsan-1015/blood-donation-server",
     "challengesFaced": [
       "Implementing secure authentication and role-based access control.",
       "Optimizing large database queries for donor search.",
@@ -32,11 +32,11 @@
     "type": "Frontend",
     "status": "Ongoing",
     "start": "2025-01-10",
-    "end": "",
+    "end": "2025-01-20",
     "technology": ["#React", "#Firebase", "#Tailwind"],
     "image": "https://img.freepik.com/premium-photo/watercolor-seamless-floral-frame-with-roses-leaves-background_1233999-3305.jpg?semt=ais_hybrid&w=740&q=80",
     "liveDemo": "https://assignmnet-09-2713d.web.app/",
-    "clientRepo": "https://github.com/Ahsan-36/winter-donation",
+    "clientRepo": "https://github.com/Ahsan-361/winter-donation",
     "challengesFaced": [
       "Ensuring authentication works seamlessly with Firebase.",
       "Managing data validation for donor and recipient details.",
@@ -52,27 +52,136 @@
   },
   {
     "id": 3,
-    "title": "Winter Clothes Donation",
-    "description": "Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.Firebase-auth based React app for organizing clothing donations.",
-    "type": "Frontend",
-    "status": "Ongoing",
-    "start": "2025-01-10",
-    "end": "",
-    "technology": ["#React", "#Firebase", "#Tailwind"],
+    "title": "E-Commerce Platform",
+    "description": "A modern e-commerce platform built with React and Node.js. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard.",
+    "type": "Full Stack",
+    "status": "Completed",
+    "start": "2024-11-15",
+    "end": "2024-12-15",
+    "technology": ["#React", "#Node.js", "#Express", "#MongoDB", "#Stripe"],
     "image": "https://i.ibb.co.com/sdXZ1wfv/Screenshot-2025-07-20-154113.png",
-    "liveDemo": "https://assignmnet-09-2713d.web.app/",
-    "clientRepo": "https://github.com/Ahsan-36/winter-donation",
+    "liveDemo": "https://ecommerce-demo.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/ecommerce-client",
+    "serverRepo": "https://github.com/Ahsan-36/ecommerce-server",
     "challengesFaced": [
-      "Ensuring authentication works seamlessly with Firebase.",
-      "Managing data validation for donor and recipient details.",
-      "Designing a user-friendly responsive UI.",
-      "Handling Firebase security rules for data protection."
+      "Implementing secure payment processing with Stripe.",
+      "Managing complex state for shopping cart functionality.",
+      "Optimizing product search and filtering performance.",
+      "Ensuring responsive design across all devices."
     ],
     "whatsNext": [
-      "Add real-time chat between donors and recipients.",
-      "Include location-based donation matching.",
-      "Implement donation history tracking for users.",
-      "Enable bulk donation requests for organizations."
+      "Add real-time notifications for order updates.",
+      "Implement advanced analytics dashboard.",
+      "Add multi-vendor support for marketplace functionality.",
+      "Integrate with third-party shipping providers."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Task Management App",
+    "description": "A collaborative task management application with real-time updates, team collaboration features, and project tracking capabilities.",
+    "type": "Full Stack",
+    "status": "Ongoing",
+    "start": "2025-01-05",
+    "end": "",
+    "technology": ["#React", "#Socket.io", "#Express", "#PostgreSQL", "#Redis"],
+    "image": "https://img.freepik.com/premium-photo/watercolor-seamless-floral-frame-with-roses-leaves-background_1233999-3305.jpg?semt=ais_hybrid&w=740&q=80",
+    "liveDemo": "https://taskmanager-demo.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/task-manager-client",
+    "serverRepo": "https://github.com/Ahsan-36/task-manager-server",
+    "challengesFaced": [
+      "Implementing real-time collaboration features with Socket.io.",
+      "Managing complex user permissions and team roles.",
+      "Optimizing database queries for large project datasets.",
+      "Creating intuitive drag-and-drop interface for task management."
+    ],
+    "whatsNext": [
+      "Add mobile app support with React Native.",
+      "Implement advanced reporting and analytics.",
+      "Add integration with popular project management tools.",
+      "Create AI-powered task prioritization features."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Weather Dashboard",
+    "description": "A comprehensive weather dashboard with location-based forecasts, interactive maps, and weather alerts. Built with modern web technologies.",
+    "type": "Frontend",
+    "status": "Completed",
+    "start": "2024-10-01",
+    "end": "2024-10-20",
+    "technology": ["#React", "#OpenWeather API", "#Chart.js", "#Tailwind"],
+    "image": "https://i.ibb.co.com/sdXZ1wfv/Screenshot-2025-07-20-154113.png",
+    "liveDemo": "https://weather-dashboard-demo.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/weather-dashboard",
+    "challengesFaced": [
+      "Integrating multiple weather APIs for comprehensive data.",
+      "Creating responsive charts and visualizations.",
+      "Implementing geolocation-based weather detection.",
+      "Optimizing API calls and caching strategies."
+    ],
+    "whatsNext": [
+      "Add historical weather data analysis.",
+      "Implement weather alerts and notifications.",
+      "Add support for multiple cities and favorites.",
+      "Create weather trend predictions using machine learning."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Social Media Dashboard",
+    "description": "A social media management dashboard for scheduling posts, analyzing engagement metrics, and managing multiple social media accounts from one platform.",
+    "type": "Full Stack",
+    "status": "Ongoing",
+    "start": "2024-12-15",
+    "end": "",
+    "technology": [
+      "#React",
+      "#Node.js",
+      "#Express",
+      "#MongoDB",
+      "#Social APIs"
+    ],
+    "image": "https://i.ibb.co.com/sdXZ1wfv/Screenshot-2025-07-20-154113.png",
+    "liveDemo": "https://social-dashboard-demo.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/social-dashboard-client",
+    "serverRepo": "https://github.com/Ahsan-36/social-dashboard-server",
+    "challengesFaced": [
+      "Integrating with multiple social media APIs (Facebook, Twitter, Instagram).",
+      "Handling OAuth authentication for different platforms.",
+      "Managing rate limits and API quotas effectively.",
+      "Creating intuitive analytics and reporting features."
+    ],
+    "whatsNext": [
+      "Add AI-powered content suggestions and optimization.",
+      "Implement advanced analytics and reporting features.",
+      "Add support for more social media platforms.",
+      "Create team collaboration and approval workflows."
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Portfolio Website",
+    "description": "A modern, responsive portfolio website showcasing projects, skills, and experience. Built with React and featuring smooth animations and interactive elements.",
+    "type": "Frontend",
+    "status": "Completed",
+    "start": "2024-09-01",
+    "end": "2024-09-15",
+    "technology": ["#React", "#Tailwind", "#Framer Motion", "#Vite"],
+    "image": "https://specials-images.forbesimg.com/imageserve/687569183e749e92f5f2cdfe/best-flower-delivery-services-2025/960x0.jpg?fit=scale",
+    "liveDemo": "https://ahsan-portfolio.web.app/",
+    "clientRepo": "https://github.com/Ahsan-36/portfolio-website",
+    "challengesFaced": [
+      "Creating smooth animations and transitions without performance issues.",
+      "Ensuring perfect responsive design across all devices.",
+      "Optimizing images and assets for fast loading.",
+      "Implementing SEO best practices for better search visibility."
+    ],
+    "whatsNext": [
+      "Add dark/light mode toggle functionality.",
+      "Implement a blog section with CMS integration.",
+      "Add contact form with email integration.",
+      "Create an admin panel for easy content management."
     ]
   }
 ]

@@ -1,7 +1,7 @@
-import { ArrowUpRight } from "lucide-react";
 import PropTypes from "prop-types";
-import { useState } from "react";
+// import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const ProjectCard = ({
@@ -13,142 +13,100 @@ const ProjectCard = ({
   liveDemo,
   clientRepo,
   serverRepo,
+  isLatest,
 }) => {
-  const [hovered, setHovered] = useState(null);
-
-  // eslint-disable-next-line react/prop-types
-  const Tooltip = ({ text }) => (
-    <div className="absolute bottom-full mb-2 px-3 py-1 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-md opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-      {text}
-      <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-gray-900 rotate-45"></div>
-    </div>
-  );
+  // no local state
 
   return (
-    <div className="bg-gray-900 text-white p-4 rounded-xl shadow-lg max-w-xl ">
+    <div className="bg-gray-900 text-white p-4 rounded-xl shadow-lg max-w-xl relative">
+      {isLatest && (
+        <span className="absolute -top-3 -left-3 text-[10px] uppercase tracking-wider bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-black px-2 py-1 rounded-full border border-gray-800">
+          Latest Project
+        </span>
+      )}
       <div className="flex flex-col h-full">
         {/* Title */}
         <h3 className="text-lg xl:text-2xl font-bold">
-          <span className="text-white">{title.split(" ")[0]}</span>{" "}
-          <span className="text-orange-400">{title.split(" ")[1]}</span>
+          <span className="text-teal-400">{title}</span>
         </h3>
         <p className="text-gray-300 text-sm mt-1">
           {description.split(" ").slice(0, 15).join(" ")}
           {description.split(" ").length > 15 && (
-            <span className="text-orange-500 cursor-pointer">
+            <a
+              href={`/projects/${id}`}
+              className="text-teal-500 cursor-pointer"
+            >
               {" "}
               ... Read More
-            </span>
+            </a>
           )}
         </p>
 
-        {/* Tech Stack */}
-        <div className="mt-2 text-orange-600   text-xs space-x-2  ">
-          {technology?.map((tech, index) => (
-            <span
-              className="bg-orange-100 rounded-md p-1 hidden 2xl:inline-block"
-              key={index}
-            >
-              {tech}
-              {index < technology.length - 1 && ","}
-            </span>
-          ))}
-        </div>
-
-        {/* Image */}
-        <div className="mt-4">
+        {/* Image with hover overlay (actions inside) */}
+        <div className="mt-4 group relative rounded-lg overflow-hidden border border-gray-700">
           <img
             src={image}
             alt={title}
-            className="rounded-lg border w-full h-40 2xl:h-60 2xl:w-96 object-cover border-gray-700"
+            className="w-full h-40 2xl:h-60 2xl:w-96 object-cover transition-transform duration-300 group-hover:scale-105"
           />
-        </div>
-
-        {/* Actions */}
-        <div className="flex items-center justify-between mt-4">
-          <div className="flex gap-2 xl:gap-4 justify-between">
-            {/* Live Demo */}
-            <div
-              className="relative flex items-center"
-              onMouseEnter={() => setHovered("live")}
-              onMouseLeave={() => setHovered(null)}
-            >
-              {hovered === "live" && <Tooltip text="Live Demo" />}
-              <a
-                href={liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-800 rounded-full hover:bg-gray-700"
-              >
-                <ArrowUpRight
-                  size={25}
-                  className={`transition ${
-                    hovered === "live" ? "text-orange-400" : "text-white"
-                  }`}
-                />
-              </a>
-            </div>
-
-            <div className="flex gap-2 xl:gap-4 ">
-              {/* Client Repo */}
-              <div
-                className="relative flex items-center"
-                onMouseEnter={() => setHovered("client")}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {hovered === "client" && <Tooltip text="Client Repo" />}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117]/90 via-[#0d1117]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
+            <div className="flex gap-3">
+              {liveDemo && (
+                <a
+                  href={liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/icon relative 2xl:w-10 2xl:h-10 w-8 h-8 rounded-full bg-indigo-500 hover:bg-indigo-500 flex items-center justify-center"
+                >
+                  <FiExternalLink className="text-white  hover:text-orange-400 hover:scale-105 transition-all duration-300  2xl:w-5 2xl:h-5 w-4 h-4" />
+                  <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-white bg-gray-900 px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity">
+                    Live Demo
+                  </span>
+                </a>
+              )}
+              {clientRepo && (
                 <a
                   href={clientRepo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 rounded-full hover:bg-gray-700"
+                  className="group/icon relative 2xl:w-10 2xl:h-10 w-8 h-8 rounded-full bg-gray-800 hover:bg-gray-700 border border-gray-600 flex items-center justify-center"
                 >
-                  <FaGithub
-                    size={25}
-                    className={`transition ${
-                      hovered === "client" ? "text-orange-400" : "text-white"
-                    }`}
-                  />
+                  <FaGithub className="text-white  hover:text-orange-400 hover:scale-105 transition-all duration-300  2xl:w-5 2xl:h-5 w-4 h-4" />
+                  <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-white bg-gray-900 px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity">
+                    Client Repo
+                  </span>
                 </a>
-              </div>
-
-              {/* Server Repo */}
-              <div
-                className="relative flex items-center"
-                onMouseEnter={() => setHovered("server")}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {hovered === "server" && <Tooltip text="Server Repo" />}
+              )}
+              {serverRepo && (
                 <a
                   href={serverRepo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 rounded-full hover:bg-gray-700"
+                  className="group/icon relative 2xl:w-10 2xl:h-10 w-8 h-8 rounded-full bg-gray-800 hover:bg-gray-700 border border-gray-600 flex items-center justify-center"
                 >
-                  <FaGithub
-                    size={25}
-                    className={`transition ${
-                      hovered === "server" ? "text-orange-400" : "text-white"
-                    }`}
-                  />
+                  <FaGithub className="text-white hover:text-orange-400 hover:scale-105 transition-all duration-300  2xl:w-5 2xl:h-5 w-4 h-4" />
+                  <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-white bg-gray-900 px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity">
+                    Server Repo
+                  </span>
                 </a>
-              </div>
+              )}
             </div>
-
-            {/* View Details */}
-            <div
-              className="relative flex items-center  ml-[90px] md:ml-16 xl:ml-[20px] 2xl:ml-[90px]"
-              onMouseEnter={() => setHovered("details")}
-              onMouseLeave={() => setHovered(null)}
+            <Link
+              to={`/projects/${id}`}
+              className="px-3 py-1 text-xs 2xl:text-sm border border-orange-500 rounded-md bg-orange-500 hover:bg-orange-400 text-black"
             >
-              <Link
-                to={`/projects/${id}`}
-                className="px-4 py-1 rounded-full text-xs 2xl:text-base border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-gray-900 transition"
-              >
-                View Details
-              </Link>
-            </div>
+              View Details
+            </Link>
           </div>
+        </div>
+        {/* Tech Stack */}
+        <div className="mt-2 text-orange-600 flex flex-wrap gap-2 text-xs   ">
+          {technology?.map((tech, index) => (
+            <span className="bg-orange-100 rounded-md p-1" key={index}>
+              {tech}
+              {index < technology.length - 1 && ","}
+            </span>
+          ))}
         </div>
       </div>
     </div>
@@ -164,6 +122,7 @@ ProjectCard.propTypes = {
   liveDemo: PropTypes.string,
   clientRepo: PropTypes.string,
   serverRepo: PropTypes.string,
+  isLatest: PropTypes.bool,
 };
 
 export default ProjectCard;

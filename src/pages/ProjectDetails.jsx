@@ -71,9 +71,6 @@ const ProjectDetails = () => {
     whatsNext = [],
   } = project;
 
-  const firstWord = (title || "").split(" ")[0] || "";
-  const restTitle = (title || "").split(" ")[1] || "";
-
   return (
     <div className="p-2 lg:p-8 bg-[#0d1117] text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-[#0b0f14] border border-gray-700 rounded-xl p-4">
@@ -87,8 +84,7 @@ const ProjectDetails = () => {
         <div className="flex flex-col justify-between">
           <div>
             <h1 className="text-3xl font-extrabold mb-2">
-              <span className="text-white">{firstWord}</span>{" "}
-              <span className="text-orange-400">{restTitle}</span>
+              <span className="text-teal-400">{title}</span>
             </h1>
             <p className="text-gray-300 mb-4">{description}</p>
 

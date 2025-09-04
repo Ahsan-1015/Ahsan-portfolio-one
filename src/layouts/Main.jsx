@@ -8,7 +8,7 @@ const Main = () => {
       <Navbar />
 
       {/* Main layout wrapper */}
-      <div className="flex flex-col xl:flex-row mt-4">
+      <div className="flex flex-col mt-4">
         {/* Left Profile Section */}
         <aside
           className="w-full lg:w-1/5  2xl:w-1/4 p-6  bg-[#0d1117] 

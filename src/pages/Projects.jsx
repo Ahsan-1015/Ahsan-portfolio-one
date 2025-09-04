@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useMemo, useState } from "react";
 import { FiChevronDown, FiSearch } from "react-icons/fi";
+import { IoIosArrowDropdown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import FeaturedProject from "../components/FeaturedProject";
 import ProjectCard from "../components/ProjectCard";
@@ -36,10 +37,10 @@ function Projects({ showViewAll = false }) {
   }, []);
 
   // Get unique categories
-  const categories = [
-    "All Categories",
-    ...new Set(projects.map((p) => p.category)),
-  ];
+  const categories = useMemo(
+    () => ["All Categories", ...new Set(projects.map((p) => p.category))],
+    [projects]
+  );
   const statuses = ["All Status", "Completed", "Ongoing"];
 
   // Filter and sort projects
@@ -69,7 +70,7 @@ function Projects({ showViewAll = false }) {
     }
 
     return filtered;
-  }, [searchTerm, selectedCategory, selectedStatus, sortBy]);
+  }, [projects, searchTerm, selectedCategory, selectedStatus, sortBy]);
 
   if (showViewAll) {
     // Home overview: show 4 projects + latest featured
@@ -77,13 +78,21 @@ function Projects({ showViewAll = false }) {
       (a, b) => new Date(b.start || 0) - new Date(a.start || 0)
     );
     const [latest, ...rest] = sorted;
-    const firstFour = rest.slice(0, 4);
+    const firstFour = rest.slice(0, 3);
     return (
       <section
         id="projects"
         className="p-2 lg:p-12 bg-[#0d1117] min-h-screen  border border-gray-500 rounded-xl"
       >
-        <h2 className="text-3xl font-bold text-center mb-6">Projects</h2>
+        <div className="flex flex-col items-center justify-center mb-8 gap-2 ">
+          <h2 className="text-3xl font-bold border-b-4 border-teal-500 rounded-md p-1  text-center mb-6">
+            Featured Projects
+          </h2>
+          <h4 className="text-center">
+            Here are some of my recent projects. Each project showcasesl <br />
+            different skills and technologies from my stack.
+          </h4>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {firstFour.map((p) => (
             <ProjectCard key={p.id} {...p} />
@@ -123,7 +132,14 @@ function Projects({ showViewAll = false }) {
       id="projects"
       className="p-2 lg:p-12 bg-[#0d1117] min-h-screen  border border-gray-500 rounded-xl"
     >
-      <h2 className="text-3xl font-bold text-center mb-6">Projects</h2>
+      <div className="flex items-center justify-center mb-8 gap-2 ">
+        <h2 className="text-3xl font-bold text-center mb-6">
+          All Projects here
+        </h2>
+        <span className="text-blue-400 animate-bounce w-06 h-6">
+          <IoIosArrowDropdown />
+        </span>
+      </div>
 
       {/* Search and Filter Section */}
       <div className="mb-8 space-y-4">
@@ -206,8 +222,13 @@ function Projects({ showViewAll = false }) {
 
       {/* No Results */}
       {filteredAndSortedProjects.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-400 text-lg">
+        <div className="text-center py-12 w-full">
+          <img
+            className="w-40 h-40   mx-auto mb-4"
+            src="https://i.ibb.co.com/0jbgWpCz/error.png"
+            alt="d"
+          />
+          <p className="text-red-600 text-lg">
             No projects found matching your criteria.
           </p>
           <button

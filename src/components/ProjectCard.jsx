@@ -18,16 +18,16 @@ const ProjectCard = ({
   // no local state
 
   return (
-    <div className="bg-gray-900 text-white p-4 rounded-xl shadow-lg max-w-xl relative">
+    <div className="bg-gray-900 hover:text-teal-500 text-white p-4 rounded-xl shadow-lg max-w-xl relative *:hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] hover:shadow-[0_0_45px_rgba(168,85,247,0.3)] transition-shadow duration-300 border border-gray-700 hover:border-cyan-400">
       {isLatest && (
         <span className="absolute -top-3 -left-3 text-[10px] uppercase tracking-wider bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-black px-2 py-1 rounded-full border border-gray-800">
           Latest Project
         </span>
       )}
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full  rounded-lg p-4">
         {/* Title */}
         <h3 className="text-lg xl:text-2xl font-bold">
-          <span className="text-teal-400">{title}</span>
+          <span className="">{title}</span>
         </h3>
         <p className="text-gray-300 text-sm mt-1">
           {description.split(" ").slice(0, 15).join(" ")}

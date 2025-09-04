@@ -8,26 +8,27 @@ const ProjectDetails = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    let isMounted = true;
-    setLoading(true);
-    fetch("/projects.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load project data");
-        return res.json();
-      })
-      .then((data) => {
-        if (!isMounted) return;
-        const found = data.find((p) => String(p.id) === String(id));
+    const fetchProject = async () => {
+      try {
+        const response = await fetch("/src/data/projects.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch project data");
+        }
+        const projects = await response.json();
+        const found = projects.find((p) => String(p.id) === String(id));
         if (!found) {
           setError("Project not found.");
         }
         setProject(found || null);
-      })
-      .catch((err) => setError(err.message || "Error fetching data"))
-      .finally(() => isMounted && setLoading(false));
-    return () => {
-      isMounted = false;
+      } catch (error) {
+        console.error("Error fetching project:", error);
+        setError("Failed to load project data");
+      } finally {
+        setLoading(false);
+      }
     };
+
+    fetchProject();
   }, [id]);
 
   if (loading) {
@@ -91,7 +92,7 @@ const ProjectDetails = () => {
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="bg-[#141a22] border border-gray-700 rounded-lg p-3">
                 <p className="text-gray-400">Category</p>
-                <p className="font-semibold">{project.type || "N/A"}</p>
+                <p className="font-semibold">{project.category || "N/A"}</p>
               </div>
               <div className="bg-[#141a22] border border-gray-700 rounded-lg p-3">
                 <p className="text-gray-400">Status</p>
@@ -157,7 +158,7 @@ const ProjectDetails = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
         <div className="bg-[#0b0f14] border border-gray-700 rounded-xl p-4">
           <h2 className="text-2xl font-bold text-orange-500 mb-3">
-            What's Next?
+            What&apos;s Next?
           </h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
             {whatsNext.map((item, idx) => (

@@ -7,7 +7,6 @@ const Home = () => {
   return (
     <div className="border border-gray-600 rounded-xl  ">
       <Hero />
-      <projects />
       <Skills />
       <Projects showViewAll={true} />
       <Contact />

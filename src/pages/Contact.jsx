@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import {
   FiGithub,
@@ -10,7 +11,7 @@ import {
 } from "react-icons/fi";
 import { contactConfig } from "../config/contact";
 
-const Contact = () => {
+const Contact = ({ showBorder = false, className = "" }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -90,7 +91,9 @@ Sent from your portfolio website
   return (
     <section
       id="contact"
-      className="p-2 lg:p-12 bg-[#0d1117] min-h-screen border border-gray-500 rounded-xl"
+      className={`p-2 lg:p-12 bg-[#0d1117] min-h-screen rounded-xl ${className} ${
+        showBorder ? "border border-gray-500 rounded-xl" : ""
+      }`}
     >
       {/* Header Section */}
       <div className="text-center mb-12">
@@ -628,6 +631,11 @@ Sent from your portfolio website
       </div>
     </section>
   );
+};
+
+Contact.propTypes = {
+  showBorder: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Contact;

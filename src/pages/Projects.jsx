@@ -82,14 +82,14 @@ function Projects({ showViewAll = false }) {
     return (
       <section
         id="projects"
-        className="p-2 lg:p-12 bg-[#0d1117] min-h-screen  border border-gray-500 rounded-xl"
+        className="p-2 lg:p-12 bg-[#0d1117] min-h-screen  rounded-xl"
       >
         <div className="flex flex-col items-center justify-center mb-8 gap-2 ">
           <h2 className="text-3xl font-bold border-b-4 border-teal-500 rounded-md p-1  text-center mb-6">
             Featured Projects
           </h2>
           <h4 className="text-center">
-            Here are some of my recent projects. Each project showcasesl <br />
+            Here are some of my recent projects. Each project showcases <br />
             different skills and technologies from my stack.
           </h4>
         </div>

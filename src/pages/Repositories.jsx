@@ -39,7 +39,7 @@ export default function Repositories() {
   if (error) return <div className="p-6 text-red-500">Error: {error}</div>;
 
   return (
-    <div className="p-6 text-white">
+    <div className="text-white">
       <h2 className="text-2xl font-bold mb-4"> Public Repositories</h2>
       <div className="space-y-4">
         {repos.map((repo) => (

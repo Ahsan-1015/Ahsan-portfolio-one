@@ -85,7 +85,9 @@ const Main = () => {
           <div className="min-h-[calc(100vh-306px)] mt-24 md:mt-20 lg:mt-32 px-4 ">
             <Outlet />
           </div>
-          <Footer />
+          <div className="  mt-16  px-4">
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

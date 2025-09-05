@@ -5,8 +5,8 @@ const FeaturedProject = ({ project }) => {
   if (!project) return null;
   const { id, title, description, image, liveDemo, technology } = project;
   return (
-    <div className="mt-10 rounded-2xl border border-gray-700 bg-gradient-to-b from-[#0f1320] to-[#0b0f14] p-5 lg:p-8">
-      <div className="flex flex-col lg:flex-row items-center gap-6">
+    <div className="mt-10 rounded-2xl border border-gray-700 bg-gradient-to-b from-[#0f1320] to-[#0b0f14] p-5 lg:p-8 *:hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] hover:shadow-[0_0_45px_rgba(168,85,247,0.3)] transition-shadow duration-300  hover:border-cyan-400">
+      <div className="flex flex-col lg:flex-row items-center gap-6  rounded-lg p-4">
         <div className="w-full lg:w-1/2">
           <span className="text-[10px] uppercase tracking-widest bg-cyan-200 text-gray-900 px-2 py-1 rounded-full">
             Latest Project

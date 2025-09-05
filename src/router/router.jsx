@@ -56,7 +56,7 @@ const router = createBrowserRouter([
             <Helmet>
               <title>Contact || Portfolio</title>
             </Helmet>
-            <Contact />
+            <Contact showBorder={true} />
           </>
         ),
       },

@@ -73,7 +73,7 @@ const ProjectDetails = () => {
   } = project;
 
   return (
-    <div className="p-2 lg:p-8 bg-[#0d1117] text-white">
+    <div className=" bg-[#0d1117] text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-[#0b0f14] border border-gray-700 rounded-xl p-4">
         <div>
           <img
@@ -155,8 +155,8 @@ const ProjectDetails = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-        <div className="bg-[#0b0f14] border border-gray-700 rounded-xl p-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 ">
+        <div className="bg-[#0b0f14] border border-gray-700 rounded-xl p-4 transition-all duration-300  hover:shadow-lg hover:shadow-gray-500/25 hover:border-teal-500">
           <h2 className="text-2xl font-bold text-orange-500 mb-3">
             What&apos;s Next?
           </h2>
@@ -166,7 +166,7 @@ const ProjectDetails = () => {
             ))}
           </ul>
         </div>
-        <div className="bg-[#0b0f14] border border-gray-700 rounded-xl p-4">
+        <div className="bg-[#0b0f14] border border-gray-700 rounded-xl p-4 transition-all duration-300  hover:shadow-lg hover:shadow-gray-500/25 hover:border-teal-500">
           <h2 className="text-2xl font-bold text-orange-500 mb-3">
             Challenges Faced
           </h2>
@@ -181,7 +181,7 @@ const ProjectDetails = () => {
       <div className="mt-6">
         <Link
           to="/projects"
-          className="px-4 py-2 rounded bg-gray-800 text-white border border-gray-600"
+          className="px-4 py-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-500/25 hover:border-teal-500 "
         >
           Back
         </Link>

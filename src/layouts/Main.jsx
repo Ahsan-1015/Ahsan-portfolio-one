@@ -20,6 +20,7 @@ const Main = () => {
               alt="Ahsan Habib"
               className="w-24 h-24 md:w-56 md:h-56 xl:w-60 xl:h-60 lg:w-52 lg:h-52 bg-cover object-cover 2xl:w-80 2xl:h-80 rounded-full items-center border-2 border-yellow-500 mb-4"
             />
+
             <div className=" lg:mt-8">
               <div className="text-left w-full ml-10 md:ml-16 lg:ml-0">
                 <h1 className="text-3xl  font-bold">Ahsan Habib</h1>

@@ -1,53 +1,44 @@
-// src/pages/Hero.jsx
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { styles } from "../styles/hero";
 
-function Hero() {
+const Hero = () => {
   return (
-    <section className="min-h-screen text-white bg-[#0d1117] ">
-      <main className="w-full p-6 mt-3 ">
-        <div className="text-center lg:text-left">
-          <h2 className="text-3xl font-bold mb-2">Hi 👋, I'm Ahsan Habib</h2>
-          <p className="text-lg text-gray-300 mb-4">
-            My Aim FULL-STACK developer from Bangladesh
-          </p>
-          <img
-            src="https://camo.githubusercontent.com/85add4a9633786947f86fe4e86eb5aca6b190ff47345434755a0d98f488fefa7/68747470733a2f2f646576656c6f706572732e67697068792e636f6d2f6272616e63682f6d61737465722f7374617469632f6170692d35313264333663303936363236383237313731303861333862626235633537642e676966"
-            alt="Hero Visual"
-            className="mx-auto lg:mx-0 w-full max-w-2xl mb-6 rounded"
-          />
-          <div className="flex justify-center lg:justify-start space-x-4 mb-4">
-            <a
-              href="https://github.com/Ahsan-1015"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub size={30} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/your-profile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin size={30} />
-            </a>
-            <a
-              href="https://twitter.com/your-profile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter size={30} />
-            </a>
-          </div>
-          <a
-            href="/resume.pdf"
-            className="bg-blue-600 text-white py-2 px-6 rounded-full inline-block"
-          >
-            Download Resume
-          </a>
+    <section className="relative w-full h-screen mx-auto">
+      <div
+        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+      >
+        <div className="flex flex-col justify-center items-center mt-5">
+          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
+          <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
-      </main>
+        <div>
+          <h1 className={`${styles.heroHeadText} text-white`}>
+            Hi, I'm <span className="text-[#915eff]">Ahsan</span>
+          </h1>
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            I develop websites and web applications
+          </p>
+        </div>
+      </div>
+      {/* <ComputersCanvas /> */}
+
+      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+        <a href="#about">
+          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+            <motion.div
+              animate={{ y: [0, 24, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="w-3 h-3 rounded-full bg-secondary mb-1"
+            />
+          </div>
+        </a>
+      </div>
     </section>
   );
-}
+};
 
 export default Hero;

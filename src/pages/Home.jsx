@@ -1,5 +1,4 @@
 import Hero from "../components/Hero";
-
 import Contact from "./Contact";
 import Projects from "./Projects";
 import Skills from "./Skills";
